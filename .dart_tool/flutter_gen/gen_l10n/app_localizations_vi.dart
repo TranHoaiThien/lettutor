@@ -26,7 +26,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get inputPassword => 'Vui lòng nhập Mật khẩu của bạn!';
 
   @override
-  String get validPassword => 'Nhập tối thiểu 6 ký tự!';
+  String get validPassword => 'Nhập tối thiểu 7 ký tự!';
 
   @override
   String get forgotPassword => 'Quên mật khẩu?';
@@ -352,40 +352,4 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get cancel => 'Hủy';
-
-  @override
-  String get totalTime => 'Tổng thời gian học là';
-
-  @override
-  String get selectNationality => 'Chọn quốc tịch gia sư';
-
-  @override
-  String get schedule => 'Lịch học';
-
-  @override
-  String get hereIsListSession => 'Đây là danh sách những khung giờ bạn đã đặt';
-
-  @override
-  String get youCanTrack => 'Bạn có thể theo dõi khi nào buổi học bắt đầu, tham gia buổi học bằng một cú nhấp chuột hoặc có thể hủy buổi học trước 2 tiếng.';
-
-  @override
-  String get chatWithBot => 'Nhắn với chatGPT';
-
-  @override
-  String get theFollowingListLesson => 'Đây là danh sách các bài học bạn đã tham gia';
-
-  @override
-  String get youCanReview => 'Bạn có thể xem lại thông tin chi tiết về các buổi học đã tham gia đã tham gia';
-
-  @override
-  String get language => 'Ngôn ngữ';
-
-  @override
-  String get upcomingLesson => 'Lớp học sắp diễn ra';
-
-  @override
-  String get classStarted => 'Lớp học đã bắt đầu';
-
-  @override
-  String get startIn => 'start in';
 }

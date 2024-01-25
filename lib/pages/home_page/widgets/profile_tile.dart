@@ -1,28 +1,25 @@
 import 'package:extended_wrap/extended_wrap.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lettutor/bloc/booking_history_bloc/booking_history_bloc.dart';
-import 'package:lettutor/bloc/list_tutor_bloc/list_tutor_bloc.dart';
 import 'package:lettutor/common_widget/common_btn.dart';
 import 'package:lettutor/common_widget/item_chip.dart';
 import 'package:lettutor/constants/colors_const.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/models/from_api/tutor_info_pagination.dart';
+import 'package:lettutor/models/tutor_info.dart';
 import 'package:lettutor/pages/home_page/widgets/avatar_heart_widget.dart';
 import 'package:lettutor/route_generator.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileTile extends StatelessWidget {
-  const ProfileTile({Key? key, required this.tutorInfo}) : super(key: key);
-
-  final TutorInfoPagination tutorInfo;
+  const ProfileTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<String> specialities = tutorInfo.specialties?.split(",") ?? [];
+    final Tutor tutor = Provider.of<Tutor>(context, listen: false);
+
     return Padding(
       padding: const EdgeInsets.only(
           left: StyleConst.kDefaultPadding / 2,
@@ -30,12 +27,8 @@ class ProfileTile extends StatelessWidget {
           bottom: StyleConst.kDefaultPadding),
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .pushNamed(RouteGenerator.tutorDetailRoute, arguments: {
-            'tutorID': tutorInfo.userId,
-            "listTutorBloc": BlocProvider.of<ListTutorBloc>(context),
-            "bookingHistoryBloc": BlocProvider.of<BookingHistoryBloc>(context)
-          });
+          Navigator.of(context).pushNamed(RouteGenerator.tutorDetailRoute,
+              arguments: {'tutor': tutor});
         },
         child: Container(
           padding: const EdgeInsets.all(StyleConst.kDefaultPadding),
@@ -55,18 +48,18 @@ class ProfileTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //avatar and heart
-              AvatarAndHeartWidget(tutorInfo: tutorInfo),
+              const AvatarAndHeartWidget(),
 
               //name
 
               Text(
-                tutorInfo.name ?? "",
+                tutor.name,
                 style: GoogleFonts.poppins(
                     textStyle: FontConst.medium.copyWith(fontSize: 22)),
               ),
 
               Text(
-                tutorInfo.country ?? "",
+                tutor.country,
                 style: GoogleFonts.roboto(
                     textStyle: FontConst.regular.copyWith(
                         fontSize: 14, color: ColorConst.hintTextColor)),
@@ -76,7 +69,7 @@ class ProfileTile extends StatelessWidget {
               Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: RatingBarIndicator(
-                    rating: tutorInfo.rating?.toDouble() ?? 0,
+                    rating: tutor.rated_star,
                     itemBuilder: (context, index) => const Icon(
                       Icons.star,
                       color: Colors.amber,
@@ -95,8 +88,9 @@ class ProfileTile extends StatelessWidget {
                 runSpacing: -10,
                 spacing: 5,
                 maxLines: 2,
-                children: List<Widget>.generate(specialities.length, (index) {
-                  return ItemChip(content: specialities[index]);
+                children:
+                    List<Widget>.generate(tutor.specialites.length, (index) {
+                  return ItemChip(content: tutor.specialites[index]);
                 }).toList(),
               ),
 
@@ -107,7 +101,7 @@ class ProfileTile extends StatelessWidget {
               //description
 
               Text(
-                tutorInfo.bio ?? "",
+                tutor.description,
                 style: GoogleFonts.roboto(
                     textStyle: FontConst.regular.copyWith(
                         fontSize: 14, color: Colors.black.withOpacity(0.6))),

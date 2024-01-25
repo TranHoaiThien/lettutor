@@ -3,13 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/colors_const.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/models/from_api/booking_history.dart';
+import 'package:lettutor/models/booking_schedule.dart';
 import 'package:lettutor/pages/schedule_page/widgets/edit_request_dialog.dart';
+import 'package:provider/provider.dart';
 
 class RequestScheduleContainer extends StatefulWidget {
-  const RequestScheduleContainer({Key? key, required this.bookingHistory})
-      : super(key: key);
-  final BookingHistory bookingHistory;
+  const RequestScheduleContainer({Key? key}) : super(key: key);
 
   @override
   State<RequestScheduleContainer> createState() =>
@@ -18,20 +17,15 @@ class RequestScheduleContainer extends StatefulWidget {
 
 class _RequestScheduleContainerState extends State<RequestScheduleContainer> {
   late TextEditingController _controller;
+  late BookingSchedule schedule;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    schedule = Provider.of(context, listen: false);
     _controller = TextEditingController();
-    _controller.text = widget.bookingHistory.studentRequest ?? "";
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    _controller.dispose();
+    _controller.text = schedule.request != null ? schedule.request! : "";
   }
 
   @override
@@ -116,13 +110,11 @@ class _RequestScheduleContainerState extends State<RequestScheduleContainer> {
   }
 
   void editRequest(BuildContext context) async {
-    String? tempText = await showDialog(
+    _controller.text = await showDialog(
         context: context,
-        builder: (context) => EditRequestDialog(
-            studentRequest: widget.bookingHistory.studentRequest ?? ""));
-    if (tempText != null) {
-      _controller.text = tempText;
-      widget.bookingHistory.studentRequest = _controller.text;
-    }
+        builder: (context) => Provider(
+            create: (context) => schedule.request, child: EditRequestDialog()));
+
+    schedule.request = _controller.text;
   }
 }

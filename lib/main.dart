@@ -1,29 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_config/flutter_config.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:lettutor/bloc/auth_bloc/auth_bloc.dart';
-
-import 'package:lettutor/bloc/register_bloc/register_bloc.dart';
-import 'package:lettutor/bloc/settings_bloc/settings_bloc.dart';
-import 'package:lettutor/constants/url_const.dart';
-import 'package:lettutor/models/chat/chat.dart';
-import 'package:lettutor/repositories/auth_repository.dart';
+import 'package:lettutor/data/list_tutor.dart';
+import 'package:lettutor/providers/list_tutor_provider.dart';
+import 'package:lettutor/providers/locale_provider.dart';
 import 'package:lettutor/route_generator.dart';
-import 'package:lettutor/utils/hive_helper.dart';
+import 'package:provider/provider.dart';
 import 'package:timeago/timeago.dart' as timeago;
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() async {
+void main() {
   timeago.setLocaleMessages("vi", timeago.ViMessages());
   timeago.setLocaleMessages("en", timeago.EnMessages());
-  WidgetsFlutterBinding.ensureInitialized();
-  await FlutterConfig.loadEnvVariables();
-  await Hive.initFlutter();
-  Hive.registerAdapter<Chat>(ChatAdapter());
-  await Hive.openBox("lettutor-19127502");
 
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => LocaleProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -41,31 +31,21 @@ class MyApp extends StatelessWidget {
           FocusManager.instance.primaryFocus?.unfocus();
         }
       },
-      child: MultiBlocProvider(
+      child: MultiProvider(
         providers: [
-          BlocProvider(
-              create: (context) =>
-                  AuthBloc(AuthRepository("${UrlConst.baseUrl}/auth"))),
-          BlocProvider(
-              create: (context) =>
-                  SettingsBloc(HiveHelper(), HiveHelper().getLanguage()))
+          ChangeNotifierProvider(create: (context) => ListTutorProvider()),
         ],
-        child: BlocBuilder<SettingsBloc, SettingsState>(
-          builder: (context, state) {
-            return MaterialApp(
-              title: 'Flutter Demo',
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-              ),
-              locale: Locale(
-                  BlocProvider.of<SettingsBloc>(context).languageSelected),
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
-              supportedLocales: AppLocalizations.supportedLocales,
-              initialRoute: RouteGenerator.splashRoute,
-              onGenerateRoute: RouteGenerator.generateRoute,
-            );
-          },
+        child: MaterialApp(
+          locale: Provider.of<LocaleProvider>(context).getLocale,
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          initialRoute: RouteGenerator.splashRoute,
+          onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),
     );

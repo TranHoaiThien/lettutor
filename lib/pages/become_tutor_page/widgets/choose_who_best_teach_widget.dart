@@ -1,10 +1,11 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lettutor/bloc/become_tutor_bloc/become_tutor_bloc.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class ChooseWhoRadioWidget extends StatefulWidget {
   const ChooseWhoRadioWidget({Key? key}) : super(key: key);
@@ -14,7 +15,8 @@ class ChooseWhoRadioWidget extends StatefulWidget {
 }
 
 class _ChooseWhoRadioWidgetState extends State<ChooseWhoRadioWidget> {
-  String selectedTeching = "Beginner";
+
+  String selectedTeching = "";
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +70,7 @@ class _ChooseWhoRadioWidgetState extends State<ChooseWhoRadioWidget> {
                 ),
               ],
             ),
+
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -84,6 +87,8 @@ class _ChooseWhoRadioWidgetState extends State<ChooseWhoRadioWidget> {
                 ),
               ],
             ),
+
+
           ],
         )
       ],
@@ -93,7 +98,6 @@ class _ChooseWhoRadioWidgetState extends State<ChooseWhoRadioWidget> {
   void checkRadio(String value) {
     setState(() {
       selectedTeching = value;
-      BlocProvider.of<BecomeTutorBloc>(context).targetStudent = selectedTeching;
     });
   }
 }

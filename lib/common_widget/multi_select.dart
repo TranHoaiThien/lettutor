@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MultiSelect extends StatefulWidget {
-  const MultiSelect(
-      {Key? key,
-      required this.items,
-      required this.title,
-      required this.selectedItems})
+  const MultiSelect({Key? key, required this.items, required this.title, required this.selectedItems})
       : super(key: key);
   final List<String> items;
   final String title;
@@ -16,14 +12,6 @@ class MultiSelect extends StatefulWidget {
 }
 
 class _MultiSelectState extends State<MultiSelect> {
-  List<String> tempSelectedItems = [];
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    tempSelectedItems.addAll(widget.selectedItems);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +19,15 @@ class _MultiSelectState extends State<MultiSelect> {
       title: Text(widget.title),
       content: SingleChildScrollView(
         child: ListBody(
-          children: widget.items
-              .map((value) => CheckboxListTile(
-                  value: tempSelectedItems.contains(value),
-                  title: Text(value),
-                  controlAffinity: ListTileControlAffinity.leading,
-                  onChanged: (isChecked) => _itemChange(value, isChecked!)))
-              .toList(),
-        ),
+            children: widget.items.map((value) =>
+                CheckboxListTile(
+                    value: widget.selectedItems.contains(value),
+                    title: Text(value),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    onChanged: (isChecked) => _itemChange(value, isChecked!)))
+            .toList(),
       ),
+    ),
       actions: [
         TextButton(onPressed: _cancel, child: const Text("Cancel")),
         TextButton(onPressed: _submit, child: const Text("Save")),
@@ -50,9 +38,9 @@ class _MultiSelectState extends State<MultiSelect> {
   void _itemChange(String itemValue, bool isSelected) {
     setState(() {
       if (isSelected) {
-        tempSelectedItems.add(itemValue);
+        widget.selectedItems.add(itemValue);
       } else {
-        tempSelectedItems.remove(itemValue);
+        widget.selectedItems.remove(itemValue);
       }
     });
   }
@@ -62,6 +50,6 @@ class _MultiSelectState extends State<MultiSelect> {
   }
 
   void _submit() {
-    Navigator.pop(context, tempSelectedItems);
+    Navigator.pop(context, widget.selectedItems);
   }
 }

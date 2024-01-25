@@ -26,7 +26,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get inputPassword => 'Please input your Password!';
 
   @override
-  String get validPassword => 'Enter min. 6 characters!';
+  String get validPassword => 'Enter min. 7 characters!';
 
   @override
   String get forgotPassword => 'Forgot Password?';
@@ -352,40 +352,4 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cancel => 'Cancel';
-
-  @override
-  String get totalTime => 'Total lesson time is';
-
-  @override
-  String get selectNationality => 'Select tutor natioanlity';
-
-  @override
-  String get schedule => 'Schedule';
-
-  @override
-  String get hereIsListSession => 'Here is a list of the sessions you have booked';
-
-  @override
-  String get youCanTrack => 'You can track when the meeting starts, join the meeting with oneclick or can cancel the meeting before 2 hours';
-
-  @override
-  String get chatWithBot => 'Chat with chatGPT';
-
-  @override
-  String get theFollowingListLesson => 'The following is a list of lessons you have attended';
-
-  @override
-  String get youCanReview => 'You can review the details of the lessons you have attended';
-
-  @override
-  String get language => 'Language';
-
-  @override
-  String get upcomingLesson => 'Upcoming lesson';
-
-  @override
-  String get classStarted => 'Class has started';
-
-  @override
-  String get startIn => 'start in';
 }

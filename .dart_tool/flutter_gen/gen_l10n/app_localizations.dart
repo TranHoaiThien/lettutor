@@ -93,52 +93,52 @@ abstract class AppLocalizations {
     Locale('vi')
   ];
 
-  /// No description provided for @helloTutor.
+  /// Forgot Password?
   ///
   /// In en, this message translates to:
   /// **'Say hello to your'**
   String get helloTutor;
 
-  /// No description provided for @englishTutor.
+  /// English tutors
   ///
   /// In en, this message translates to:
   /// **'English tutors'**
   String get englishTutor;
 
-  /// No description provided for @becomeFluent.
+  /// Become fluent faster through one on one video chat lessons tailored to your goals.
   ///
   /// In en, this message translates to:
   /// **'Become fluent faster through one on one video chat lessons tailored to your goals.'**
   String get becomeFluent;
 
-  /// No description provided for @inputMail.
+  /// Please input your Email!
   ///
   /// In en, this message translates to:
   /// **'Please input your Email!'**
   String get inputMail;
 
-  /// No description provided for @validEmail.
+  /// The input is not valid Email!
   ///
   /// In en, this message translates to:
   /// **'The input is not valid Email!'**
   String get validEmail;
 
-  /// No description provided for @password.
+  /// Password
   ///
   /// In en, this message translates to:
   /// **'Password'**
   String get password;
 
-  /// No description provided for @inputPassword.
+  /// Please input your Password!
   ///
   /// In en, this message translates to:
   /// **'Please input your Password!'**
   String get inputPassword;
 
-  /// No description provided for @validPassword.
+  /// Enter min. 7 characters!
   ///
   /// In en, this message translates to:
-  /// **'Enter min. 6 characters!'**
+  /// **'Enter min. 7 characters!'**
   String get validPassword;
 
   /// No description provided for @forgotPassword.
@@ -147,523 +147,523 @@ abstract class AppLocalizations {
   /// **'Forgot Password?'**
   String get forgotPassword;
 
-  /// No description provided for @login.
+  /// Log in
   ///
   /// In en, this message translates to:
   /// **'Log in'**
   String get login;
 
-  /// No description provided for @orContinue.
+  /// Or continue with
   ///
   /// In en, this message translates to:
   /// **'Or continue with'**
   String get orContinue;
 
-  /// No description provided for @notAMember.
+  /// Not a member yet?
   ///
   /// In en, this message translates to:
   /// **'Not a member yet?'**
   String get notAMember;
 
-  /// No description provided for @signUp.
+  /// Sign up
   ///
   /// In en, this message translates to:
   /// **'Sign up'**
   String get signUp;
 
-  /// No description provided for @startLearning.
+  /// Start learning with
   ///
   /// In en, this message translates to:
   /// **'Start learning with'**
   String get startLearning;
 
-  /// No description provided for @alreadyHaveAccount.
+  /// Already have an account?
   ///
   /// In en, this message translates to:
   /// **'Already have an account?'**
   String get alreadyHaveAccount;
 
-  /// No description provided for @home.
+  /// Home
   ///
   /// In en, this message translates to:
   /// **'Home'**
   String get home;
 
-  /// No description provided for @course.
+  /// Course
   ///
   /// In en, this message translates to:
   /// **'Course'**
   String get course;
 
-  /// No description provided for @account.
+  /// Account
   ///
   /// In en, this message translates to:
   /// **'Account'**
   String get account;
 
-  /// No description provided for @noUpcomingLesson.
+  /// You have no upcoming lesson.
   ///
   /// In en, this message translates to:
   /// **'You have no upcoming lesson.'**
   String get noUpcomingLesson;
 
-  /// No description provided for @welcomeTo.
+  /// Welcome to LetTutor!
   ///
   /// In en, this message translates to:
   /// **'Welcome to LetTutor!'**
   String get welcomeTo;
 
-  /// No description provided for @findATutor.
+  /// Find a Tutor
   ///
   /// In en, this message translates to:
   /// **'Find a Tutor'**
   String get findATutor;
 
-  /// No description provided for @enterTutorName.
+  /// Enter tutor name
   ///
   /// In en, this message translates to:
   /// **'Enter tutor name'**
   String get enterTutorName;
 
-  /// No description provided for @selectTutorNation.
+  /// Select tutor nation
   ///
   /// In en, this message translates to:
   /// **'Select tutor nation'**
   String get selectTutorNation;
 
-  /// No description provided for @selectAvailableTime.
+  /// Select available tutoring time:
   ///
   /// In en, this message translates to:
   /// **'Select available tutoring time:'**
   String get selectAvailableTime;
 
-  /// No description provided for @selectADay.
+  /// Select a day
   ///
   /// In en, this message translates to:
   /// **'Select a day'**
   String get selectADay;
 
-  /// No description provided for @resetFilter.
+  /// Reset filter
   ///
   /// In en, this message translates to:
   /// **'Reset filter'**
   String get resetFilter;
 
-  /// No description provided for @recommendedTutor.
+  /// recommendedTutor
   ///
   /// In en, this message translates to:
   /// **'Recommended Tutors'**
   String get recommendedTutor;
 
-  /// No description provided for @seeFavoriteTutor.
+  /// seeFavoriteTutor
   ///
   /// In en, this message translates to:
   /// **'See your favorite tutors'**
   String get seeFavoriteTutor;
 
-  /// No description provided for @book.
+  /// book
   ///
   /// In en, this message translates to:
   /// **'Book'**
   String get book;
 
-  /// No description provided for @favorites.
+  /// favorites
   ///
   /// In en, this message translates to:
   /// **'Favorites'**
   String get favorites;
 
-  /// No description provided for @report.
+  /// report
   ///
   /// In en, this message translates to:
   /// **'Report'**
   String get report;
 
-  /// No description provided for @review.
+  /// review
   ///
   /// In en, this message translates to:
   /// **'Review'**
   String get review;
 
-  /// No description provided for @languages.
+  /// languages
   ///
   /// In en, this message translates to:
   /// **'Languages'**
   String get languages;
 
-  /// No description provided for @specialities.
+  /// specialities
   ///
   /// In en, this message translates to:
   /// **'Specialities'**
   String get specialities;
 
-  /// No description provided for @interest.
+  /// interest
   ///
   /// In en, this message translates to:
   /// **'Interest'**
   String get interest;
 
-  /// No description provided for @teachingExperience.
+  /// teachingExperience
   ///
   /// In en, this message translates to:
   /// **'Teaching experience'**
   String get teachingExperience;
 
-  /// No description provided for @discoverCourse.
+  /// Discover Courses
   ///
   /// In en, this message translates to:
   /// **'Discover Courses'**
   String get discoverCourse;
 
-  /// No description provided for @liveTutorHasBuilt.
+  /// liveTutorHasBuilt
   ///
   /// In en, this message translates to:
   /// **'LiveTutor has built the most quality, methodical and scientific courses in the fields of life for those who are in need of improving their knowledge of the fields.'**
   String get liveTutorHasBuilt;
 
-  /// No description provided for @selectLevel.
+  /// selectLevel
   ///
   /// In en, this message translates to:
   /// **'Select level'**
   String get selectLevel;
 
-  /// No description provided for @selectCategory.
+  /// selectCategory
   ///
   /// In en, this message translates to:
   /// **'Select category'**
   String get selectCategory;
 
-  /// No description provided for @sortLevel.
+  /// sortLevel
   ///
   /// In en, this message translates to:
   /// **'Sort by level'**
   String get sortLevel;
 
-  /// No description provided for @overview.
+  /// overview
   ///
   /// In en, this message translates to:
   /// **'Overview'**
   String get overview;
 
-  /// No description provided for @whyTakeCourse.
+  /// whyTakeCourse
   ///
   /// In en, this message translates to:
   /// **'Why take this course'**
   String get whyTakeCourse;
 
-  /// No description provided for @whatWillAbleDo.
+  /// whatWillAbleDo
   ///
   /// In en, this message translates to:
   /// **'What will you be able to do'**
   String get whatWillAbleDo;
 
-  /// No description provided for @experienceLevel.
+  /// experienceLevel
   ///
   /// In en, this message translates to:
   /// **'Experience Level'**
   String get experienceLevel;
 
-  /// No description provided for @courseLength.
+  /// courseLength
   ///
   /// In en, this message translates to:
   /// **'Course Length'**
   String get courseLength;
 
-  /// No description provided for @topics.
+  /// topics
   ///
   /// In en, this message translates to:
   /// **'topics'**
   String get topics;
 
-  /// No description provided for @listTopic.
+  /// listTopic
   ///
   /// In en, this message translates to:
   /// **'List Topics'**
   String get listTopic;
 
-  /// No description provided for @editProfile.
+  /// editProfile
   ///
   /// In en, this message translates to:
   /// **'Edit your profile'**
   String get editProfile;
 
-  /// No description provided for @history.
+  /// history
   ///
   /// In en, this message translates to:
   /// **'History'**
   String get history;
 
-  /// No description provided for @becomeATutor.
+  /// becomeATutor
   ///
   /// In en, this message translates to:
   /// **'Become a tutor'**
   String get becomeATutor;
 
-  /// No description provided for @settings.
+  /// settings
   ///
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
 
-  /// No description provided for @logOut.
+  /// logOut
   ///
   /// In en, this message translates to:
   /// **'Log out'**
   String get logOut;
 
-  /// No description provided for @name.
+  /// name
   ///
   /// In en, this message translates to:
   /// **'Name'**
   String get name;
 
-  /// No description provided for @emailAddress.
+  /// emailAddress
   ///
   /// In en, this message translates to:
   /// **'Email Address'**
   String get emailAddress;
 
-  /// No description provided for @country.
+  /// country
   ///
   /// In en, this message translates to:
   /// **'Country'**
   String get country;
 
-  /// No description provided for @phoneNumber.
+  /// phoneNumber
   ///
   /// In en, this message translates to:
   /// **'Phone Number'**
   String get phoneNumber;
 
-  /// No description provided for @birthDay.
+  /// birthDay
   ///
   /// In en, this message translates to:
   /// **'Birthday'**
   String get birthDay;
 
-  /// No description provided for @myLevel.
+  /// myLevel
   ///
   /// In en, this message translates to:
   /// **'My Level'**
   String get myLevel;
 
-  /// No description provided for @wantToLearn.
+  /// wantToLearn
   ///
   /// In en, this message translates to:
   /// **'Want to learn'**
   String get wantToLearn;
 
-  /// No description provided for @studySchedule.
+  /// studySchedule
   ///
   /// In en, this message translates to:
   /// **'Study Schedule'**
   String get studySchedule;
 
-  /// No description provided for @save.
+  /// save
   ///
   /// In en, this message translates to:
   /// **'Save'**
   String get save;
 
-  /// No description provided for @noteTheTime.
+  /// noteTheTime
   ///
   /// In en, this message translates to:
   /// **'Note the time of the week you want to study on lettutor'**
   String get noteTheTime;
 
-  /// No description provided for @completeProfile.
+  /// completeProfile
   ///
   /// In en, this message translates to:
   /// **'Complete Profile'**
   String get completeProfile;
 
-  /// No description provided for @videoIntroduction.
+  /// videoIntroduction
   ///
   /// In en, this message translates to:
   /// **'Video introduction'**
   String get videoIntroduction;
 
-  /// No description provided for @approval.
+  /// approval
   ///
   /// In en, this message translates to:
   /// **'Approval'**
   String get approval;
 
-  /// No description provided for @setUpTutorProfile.
+  /// setUpTutorProfile
   ///
   /// In en, this message translates to:
   /// **'Set up your tutor profile'**
   String get setUpTutorProfile;
 
-  /// No description provided for @yourTutorProfile.
+  /// yourTutorProfile
   ///
   /// In en, this message translates to:
   /// **'Your tutor profile is your chance to market yourself to students on Tutoring. You can make edits later on your profile settings page.'**
   String get yourTutorProfile;
 
-  /// No description provided for @newStudentMay.
+  /// newStudentMay
   ///
   /// In en, this message translates to:
   /// **'New students may browse tutor profiles to find a tutor that fits their learning goals and personality. Returning students may use the tutor profiles to find tutors they\'ve had great experiences with already.'**
   String get newStudentMay;
 
-  /// No description provided for @basicInfo.
+  /// basicInfo
   ///
   /// In en, this message translates to:
   /// **'Basic info'**
   String get basicInfo;
 
-  /// No description provided for @plsUpProPhoto.
+  /// plsUpProPhoto
   ///
   /// In en, this message translates to:
   /// **'Please upload a professional photo. See guidelines'**
   String get plsUpProPhoto;
 
-  /// No description provided for @tutoringName.
+  /// tutoringName
   ///
   /// In en, this message translates to:
   /// **'Tutoring name'**
   String get tutoringName;
 
-  /// No description provided for @imFrom.
+  /// imFrom
   ///
   /// In en, this message translates to:
   /// **'I\'m from'**
   String get imFrom;
 
-  /// No description provided for @dob.
+  /// dob
   ///
   /// In en, this message translates to:
   /// **'Date of Birth'**
   String get dob;
 
-  /// No description provided for @studentWillView.
+  /// studentWillView
   ///
   /// In en, this message translates to:
   /// **'Students will view this information on your profile to decide if you\'re a good fit for them.'**
   String get studentWillView;
 
-  /// No description provided for @inOrderToProtect.
+  /// inOrderToProtect
   ///
   /// In en, this message translates to:
   /// **'In order to protect your privacy, please do not share your personal information (email, phone number, social email, skype, etc) in your profile.'**
   String get inOrderToProtect;
 
-  /// No description provided for @hintInterests.
+  /// hintInterests
   ///
   /// In en, this message translates to:
   /// **'Interests, hobbies, memorable life experiences, or anything else you\'d like to share!'**
   String get hintInterests;
 
-  /// No description provided for @education.
+  /// education
   ///
   /// In en, this message translates to:
   /// **'Education'**
   String get education;
 
-  /// No description provided for @hintEducation.
+  /// hintEducation
   ///
   /// In en, this message translates to:
   /// **'Example: \'Bachelor of Arts in English from Cambly University; Certified yoga instructor, Second Language Acquisition and Teaching  (SLAT) certificate from Cambly University\''**
   String get hintEducation;
 
-  /// No description provided for @experience.
+  /// Experience
   ///
   /// In en, this message translates to:
   /// **'Experience'**
   String get experience;
 
-  /// No description provided for @currentPrevProfession.
+  /// currentPrevProfession
   ///
   /// In en, this message translates to:
   /// **'Current or Previous Profession'**
   String get currentPrevProfession;
 
-  /// No description provided for @languesISpeak.
+  /// languesISpeak
   ///
   /// In en, this message translates to:
   /// **'Languages I speak'**
   String get languesISpeak;
 
-  /// No description provided for @hintLanguages.
+  /// hintLanguages
   ///
   /// In en, this message translates to:
   /// **'Example: English, Vietnamese, Chinese, Korean'**
   String get hintLanguages;
 
-  /// No description provided for @whoITeach.
+  /// whoITeach
   ///
   /// In en, this message translates to:
   /// **'Who I teach'**
   String get whoITeach;
 
-  /// No description provided for @firstThingStudentLook.
+  /// firstThingStudentLook
   ///
   /// In en, this message translates to:
   /// **'This is the first thing students will see when looking for tutors.'**
   String get firstThingStudentLook;
 
-  /// No description provided for @introduction.
+  /// introduction
   ///
   /// In en, this message translates to:
   /// **'Introduction'**
   String get introduction;
 
-  /// No description provided for @hintIntroduction.
+  /// hintIntroduction
   ///
   /// In en, this message translates to:
   /// **'Example: \'I was a doctor for 35 years and can help you practice business or medical English. I also enjoy teaching beginners as I am very patient and always speak slowly and clearly. \''**
   String get hintIntroduction;
 
-  /// No description provided for @bestAtTeachingWho.
+  /// bestAtTeachingWho
   ///
   /// In en, this message translates to:
   /// **'I am best at teaching students who are'**
   String get bestAtTeachingWho;
 
-  /// No description provided for @beginner.
+  /// beginner
   ///
   /// In en, this message translates to:
   /// **'Beginner'**
   String get beginner;
 
-  /// No description provided for @intermediate.
+  /// intermediate
   ///
   /// In en, this message translates to:
   /// **'Intermediate'**
   String get intermediate;
 
-  /// No description provided for @advanced.
+  /// advanced
   ///
   /// In en, this message translates to:
   /// **'Advanced'**
   String get advanced;
 
-  /// No description provided for @mySpecialties.
+  /// mySpecialties
   ///
   /// In en, this message translates to:
   /// **'My specialties are'**
   String get mySpecialties;
 
-  /// No description provided for @introduceYourself.
+  /// introduceYourself
   ///
   /// In en, this message translates to:
   /// **'Introduce yourself'**
   String get introduceYourself;
 
-  /// No description provided for @letStudentKnowWhat.
+  /// letStudentKnowWhat
   ///
   /// In en, this message translates to:
   /// **'Let students know what they can expect from a lesson with you by recording a video highlighting your teaching style, expertise and personality. Students can be nervous to speak with a foreigner, so it really helps to have a friendly video that introduces yourself and invites students to call you.'**
   String get letStudentKnowWhat;
 
-  /// No description provided for @introductionVideo.
+  /// introductionVideo
   ///
   /// In en, this message translates to:
   /// **'Introduction video'**
   String get introductionVideo;
 
-  /// No description provided for @aFewHelpfulTips.
+  /// aFewHelpfulTips
   ///
   /// In en, this message translates to:
   /// **'A few helpful tips:'**
@@ -693,167 +693,95 @@ abstract class AppLocalizations {
   /// **'Speak for 1-3 minutes'**
   String get fourthTips;
 
-  /// No description provided for @noteVideoIntroduction.
+  /// noteVideoIntroduction
   ///
   /// In en, this message translates to:
   /// **'Note: We only support uploading video file that is less than 64 MB in size.'**
   String get noteVideoIntroduction;
 
-  /// No description provided for @chooseVideo.
+  /// chooseVideo
   ///
   /// In en, this message translates to:
   /// **'Choose video'**
   String get chooseVideo;
 
-  /// No description provided for @haveDoneAllTheStep.
+  /// haveDoneAllTheStep
   ///
   /// In en, this message translates to:
   /// **'You have done all the steps'**
   String get haveDoneAllTheStep;
 
-  /// No description provided for @plsWaitForApprove.
+  /// plsWaitForApprove
   ///
   /// In en, this message translates to:
   /// **'Please, wait for the operator\'s approval'**
   String get plsWaitForApprove;
 
-  /// No description provided for @resetPass.
+  /// resetPass
   ///
   /// In en, this message translates to:
   /// **'Reset Password'**
   String get resetPass;
 
-  /// No description provided for @plsEnterEmail.
+  /// plsEnterEmail
   ///
   /// In en, this message translates to:
   /// **'Please enter your email address to search for your account.'**
   String get plsEnterEmail;
 
-  /// No description provided for @sendResetLink.
+  /// sendResetLink
   ///
   /// In en, this message translates to:
   /// **'Send reset link'**
   String get sendResetLink;
 
-  /// No description provided for @othersReview.
+  /// othersReview
   ///
   /// In en, this message translates to:
   /// **'Others review'**
   String get othersReview;
 
-  /// No description provided for @bookingDetail.
+  /// bookingDetail
   ///
   /// In en, this message translates to:
   /// **'Booking details'**
   String get bookingDetail;
 
-  /// No description provided for @bookingTime.
+  /// bookingTime
   ///
   /// In en, this message translates to:
   /// **'Booking Time'**
   String get bookingTime;
 
-  /// No description provided for @balance.
+  /// balance
   ///
   /// In en, this message translates to:
   /// **'Balance'**
   String get balance;
 
-  /// No description provided for @price.
+  /// price
   ///
   /// In en, this message translates to:
   /// **'Price'**
   String get price;
 
-  /// No description provided for @haveNumLessonLeft.
+  /// haveNumLessonLeft
   ///
   /// In en, this message translates to:
   /// **'You have {num} lesson left'**
   String haveNumLessonLeft(int num);
 
-  /// No description provided for @priceLesson.
+  /// priceLesson
   ///
   /// In en, this message translates to:
   /// **'{num} lesson'**
   String priceLesson(int num);
 
-  /// No description provided for @cancel.
+  /// cancel
   ///
   /// In en, this message translates to:
   /// **'Cancel'**
   String get cancel;
-
-  /// No description provided for @totalTime.
-  ///
-  /// In en, this message translates to:
-  /// **'Total lesson time is'**
-  String get totalTime;
-
-  /// No description provided for @selectNationality.
-  ///
-  /// In en, this message translates to:
-  /// **'Select tutor natioanlity'**
-  String get selectNationality;
-
-  /// No description provided for @schedule.
-  ///
-  /// In en, this message translates to:
-  /// **'Schedule'**
-  String get schedule;
-
-  /// No description provided for @hereIsListSession.
-  ///
-  /// In en, this message translates to:
-  /// **'Here is a list of the sessions you have booked'**
-  String get hereIsListSession;
-
-  /// No description provided for @youCanTrack.
-  ///
-  /// In en, this message translates to:
-  /// **'You can track when the meeting starts, join the meeting with oneclick or can cancel the meeting before 2 hours'**
-  String get youCanTrack;
-
-  /// No description provided for @chatWithBot.
-  ///
-  /// In en, this message translates to:
-  /// **'Chat with chatGPT'**
-  String get chatWithBot;
-
-  /// No description provided for @theFollowingListLesson.
-  ///
-  /// In en, this message translates to:
-  /// **'The following is a list of lessons you have attended'**
-  String get theFollowingListLesson;
-
-  /// No description provided for @youCanReview.
-  ///
-  /// In en, this message translates to:
-  /// **'You can review the details of the lessons you have attended'**
-  String get youCanReview;
-
-  /// No description provided for @language.
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
-
-  /// No description provided for @upcomingLesson.
-  ///
-  /// In en, this message translates to:
-  /// **'Upcoming lesson'**
-  String get upcomingLesson;
-
-  /// No description provided for @classStarted.
-  ///
-  /// In en, this message translates to:
-  /// **'Class has started'**
-  String get classStarted;
-
-  /// No description provided for @startIn.
-  ///
-  /// In en, this message translates to:
-  /// **'start in'**
-  String get startIn;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

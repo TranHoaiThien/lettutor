@@ -1,34 +1,28 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/models/from_api/tutor_info_pagination.dart';
+import 'package:lettutor/models/booking_schedule.dart';
+import 'package:provider/provider.dart';
 
 class AvaNameScheduleContainer extends StatelessWidget {
-  const AvaNameScheduleContainer({Key? key, required this.tutorInfo})
-      : super(key: key);
-  final TutorInfoPagination tutorInfo;
+  const AvaNameScheduleContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    BookingSchedule schedule =
+    Provider.of<BookingSchedule>(context, listen: false);
+
     return Container(
       padding: const EdgeInsets.all(StyleConst.kDefaultPadding / 2),
       decoration: const BoxDecoration(color: Colors.white),
       child: Row(
         children: [
-          ClipOval(
-            child: SizedBox.fromSize(
-              size: const Size.fromRadius(40),
-              child: Image.network(
-                tutorInfo.avatar ??
-                    "https://play-lh.googleusercontent.com/7pMjZVSZahaqMHzY1mtc0A1uCI0eH0m9K_kRZ9r9PmUCwKfm5TYEaMuZP6S6s-TdjQ",
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) {
-                  return Image.network(
-                      "https://play-lh.googleusercontent.com/7pMjZVSZahaqMHzY1mtc0A1uCI0eH0m9K_kRZ9r9PmUCwKfm5TYEaMuZP6S6s-TdjQ");
-                },
-              ),
-            ),
+          CircleAvatar(
+            backgroundImage: NetworkImage(schedule.avaTutorUrl),
+            radius: 25,
           ),
           const SizedBox(
             width: StyleConst.kDefaultPadding / 2,
@@ -38,11 +32,11 @@ class AvaNameScheduleContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  tutorInfo.name!,
+                  schedule.nameTutor,
                   style: GoogleFonts.roboto(
                       textStyle: FontConst.medium.copyWith(fontSize: 20)),
                 ),
-                Text(tutorInfo.country!,
+                Text(schedule.countryTutor,
                     style: GoogleFonts.roboto(
                         textStyle: FontConst.regular.copyWith(fontSize: 14))),
                 TextButton(
@@ -55,7 +49,7 @@ class AvaNameScheduleContainer extends StatelessWidget {
                     child: Text("Direct Message",
                         style: GoogleFonts.roboto(
                             textStyle:
-                                FontConst.regular.copyWith(fontSize: 14))))
+                            FontConst.regular.copyWith(fontSize: 14))))
               ],
             ),
           )

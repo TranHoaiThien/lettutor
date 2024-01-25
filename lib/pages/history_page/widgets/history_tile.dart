@@ -1,19 +1,27 @@
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/models/from_api/booking_history.dart';
+import 'package:lettutor/data/history_list.dart';
+import 'package:lettutor/models/booking_history.dart';
 import 'package:lettutor/pages/history_page/widgets/ava_name_history_container.dart';
 import 'package:lettutor/pages/history_page/widgets/expansion_container.dart';
 import 'package:lettutor/pages/history_page/widgets/time_ago_widget.dart';
+import 'package:lettutor/providers/locale_provider.dart';
+import 'package:provider/provider.dart';
 
 class HistoryTile extends StatelessWidget {
-  const HistoryTile({Key? key, required this.bookingHistory}) : super(key: key);
-
-  final BookingHistory bookingHistory;
+  const HistoryTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    BookingHostory history =
+        Provider.of<BookingHostory>(context, listen: false);
+
+    DateFormat timeFormat = DateFormat("hh:mm");
+
     return Padding(
       padding: const EdgeInsets.only(bottom: StyleConst.kDefaultPadding),
       child: Container(
@@ -22,17 +30,11 @@ class HistoryTile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TimeAgoWidget(
-              startDate: DateTime.fromMillisecondsSinceEpoch(
-                  bookingHistory.scheduleDetailInfo!.startPeriodTimestamp!),
-            ),
+            const TimeAgoWidget(),
             const SizedBox(
               height: StyleConst.kDefaultPadding / 2,
             ),
-            AvaNameHistoryContainer(
-              tutorInfo:
-                  bookingHistory.scheduleDetailInfo!.scheduleInfo!.tutorInfo!,
-            ),
+            const AvaNameHistoryContainer(),
             const SizedBox(
               height: StyleConst.kDefaultPadding / 2,
             ),
@@ -41,7 +43,7 @@ class HistoryTile extends StatelessWidget {
               padding: const EdgeInsets.all(StyleConst.kDefaultPadding / 2),
               decoration: const BoxDecoration(color: Colors.white),
               child: Text(
-                "Lesson Time: ${bookingHistory.scheduleDetailInfo?.startPeriod} - ${bookingHistory.scheduleDetailInfo?.endPeriod}",
+                "Lesson Time: ${timeFormat.format(history.startDate)} - ${timeFormat.format(history.endDate)}",
                 style: GoogleFonts.roboto(
                     textStyle: FontConst.regular.copyWith(fontSize: 20)),
               ),
@@ -49,14 +51,11 @@ class HistoryTile extends StatelessWidget {
             const SizedBox(
               height: StyleConst.kDefaultPadding / 2,
             ),
-            ExpansionContainer(
-              isReview: false,
-              content: bookingHistory.studentRequest,
-            ),
-            ExpansionContainer(
-              isReview: true,
-              content: bookingHistory.tutorReview,
-            ),
+            const ExpansionContainer(isReview: true),
+
+            const ExpansionContainer(isReview: false),
+
+
           ],
         ),
       ),

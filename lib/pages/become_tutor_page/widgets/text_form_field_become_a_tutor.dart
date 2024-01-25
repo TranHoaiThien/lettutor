@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/colors_const.dart';
@@ -5,19 +7,12 @@ import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 
 class TextFormFieldBecomeATutor extends StatefulWidget {
-  const TextFormFieldBecomeATutor(
-      {Key? key,
-      required this.title,
-      required this.hintTitle,
-      required this.onTextChanged})
-      : super(key: key);
+  const TextFormFieldBecomeATutor({Key? key, required this.title, required this.hintTitle}) : super(key: key);
 
   final String title, hintTitle;
-  final Function(String) onTextChanged;
 
   @override
-  State<TextFormFieldBecomeATutor> createState() =>
-      _TextFormFieldBecomeATutorState();
+  State<TextFormFieldBecomeATutor> createState() => _TextFormFieldBecomeATutorState();
 }
 
 class _TextFormFieldBecomeATutorState extends State<TextFormFieldBecomeATutor> {
@@ -29,7 +24,8 @@ class _TextFormFieldBecomeATutorState extends State<TextFormFieldBecomeATutor> {
         Text(
           widget.title,
           style: GoogleFonts.openSans(
-              textStyle: FontConst.regular.copyWith(fontSize: 14)),
+              textStyle: FontConst.regular
+                  .copyWith(fontSize: 14)),
         ),
         const SizedBox(
           height: StyleConst.kDefaultPadding / 3,
@@ -41,7 +37,6 @@ class _TextFormFieldBecomeATutorState extends State<TextFormFieldBecomeATutor> {
           validator: (value) {
             return value!.isNotEmpty ? null : "Please input value";
           },
-          onChanged: widget.onTextChanged,
           style: const TextStyle(fontSize: 14),
           decoration: InputDecoration(
             isDense: true,
@@ -51,9 +46,11 @@ class _TextFormFieldBecomeATutorState extends State<TextFormFieldBecomeATutor> {
             hintText: widget.hintTitle,
           ),
         ),
+
         const SizedBox(
           height: StyleConst.kDefaultPadding,
         ),
+
       ],
     );
   }

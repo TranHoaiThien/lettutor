@@ -5,9 +5,7 @@ import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 
 class NoteContainer extends StatelessWidget {
-  const NoteContainer({Key? key, required this.noteTextController})
-      : super(key: key);
-  final TextEditingController noteTextController;
+  const NoteContainer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +35,17 @@ class NoteContainer extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(StyleConst.kDefaultPadding / 2.5),
               child: TextField(
-                controller: noteTextController,
                 minLines: 6,
                 maxLines: 6,
                 decoration: const InputDecoration(
-                    isDense: true,
+                  isDense: true,
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: ColorConst.hintTextColor),
-                    )),
+                  borderSide:
+                      BorderSide(color: ColorConst.hintTextColor),
+                )),
                 style: GoogleFonts.roboto(
-                    textStyle: FontConst.regular.copyWith(fontSize: 14)),
+                    textStyle: FontConst.regular.copyWith(
+                        fontSize: 14)),
               ),
             )
           ],

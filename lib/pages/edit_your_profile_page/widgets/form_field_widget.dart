@@ -56,12 +56,8 @@ class _FormFieldWidgetState extends State<FormFieldWidget> {
             return value!.isNotEmpty ? null : "Please input value";
           },
           enabled: widget.isEnabled,
-          style: TextStyle(
-              fontSize: 14,
-              color: widget.isEnabled ? Colors.black : Colors.grey),
+          style: const TextStyle(fontSize: 14),
           decoration: InputDecoration(
-            fillColor: Colors.grey[300],
-            filled: widget.isEnabled ? false : true,
             isDense: true,
             border: OutlineInputBorder(
                 borderSide: const BorderSide(color: ColorConst.hintTextColor),

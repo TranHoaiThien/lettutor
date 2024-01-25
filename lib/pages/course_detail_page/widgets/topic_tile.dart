@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lettutor/constants/colors_const.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/models/from_api/topic_course.dart';
-import 'package:lettutor/route_generator.dart';
+import 'package:lettutor/models/topic.dart';
+import 'package:lettutor/pages/course_detail_page/pdf_view_page.dart';
 
 class TopicTile extends StatelessWidget {
   const TopicTile({Key? key, required this.topic, required this.index})
       : super(key: key);
 
-  final Topics topic;
+  final Topic topic;
   final int index;
 
   @override
@@ -18,11 +19,10 @@ class TopicTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: StyleConst.kDefaultPadding),
       child: InkWell(
         onTap: () {
-          Navigator.of(context).pushNamed(RouteGenerator.pdfViewerRoute,
-              arguments: {
-                "pdfUrl": topic.nameFile ?? "",
-                "pdfName": topic.name ?? ""
-              });
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => PdfViewPage(pdfUrl: topic.pdfUrl)));
         },
         child: Container(
           width: double.infinity,
@@ -48,7 +48,7 @@ class TopicTile extends StatelessWidget {
               const SizedBox(
                 height: StyleConst.kDefaultPadding / 3,
               ),
-              Text(topic.name ?? "",
+              Text(topic.title,
                   style: GoogleFonts.poppins(
                       textStyle: FontConst.medium.copyWith(fontSize: 16))),
             ],
