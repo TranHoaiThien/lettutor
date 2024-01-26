@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/colors_const.dart';
@@ -13,8 +15,8 @@ class ItemChip extends StatelessWidget {
       label: Text(
         content,
         style: GoogleFonts.roboto(
-            textStyle:
-                FontConst.regular.copyWith(color: Colors.blue, fontSize: 12)),
+            textStyle: FontConst.regular
+                .copyWith(color: Colors.blue, fontSize: 12)),
       ),
       backgroundColor: ColorConst.selectedChipColor,
     );

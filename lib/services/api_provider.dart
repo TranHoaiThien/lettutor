@@ -24,8 +24,6 @@ class ApiProvider {
       return handler.next(options);
     }, onError: (DioError error, handler) async {
       //only run if access Token expired or invalid.
-      //Need to discuss with Nam to have the message of Expired Token
-      print("321");
       if (error.response?.statusCode == 401 &&
           error.response?.data["message"] == "Please authenticate") {
         String? refreshToken =
@@ -111,6 +109,30 @@ class ApiProvider {
     }
   }
 
+  Future<dynamic> delete(
+      {required String url,
+      Map<String, dynamic>? headers,
+      String? contentType,
+      Object? data,
+      Map<String, dynamic>? queryParams,
+      CancelToken? cancelToken}) async {
+    try {
+      final response = await api.delete(url,
+          options: Options(
+              headers: headers,
+              contentType: contentType,
+              receiveTimeout: const Duration(seconds: 10)),
+          data: data,
+          queryParameters: queryParams,
+          cancelToken: cancelToken);
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return response.data;
+      }
+    } on DioError catch (err) {
+      throw CustomException(err.response?.data["message"]);
+    }
+  }
+
   Future<bool> refreshTokenApi(String refreshToken) async {
     try {
       final response = await Dio().post(
@@ -121,10 +143,10 @@ class ApiProvider {
           data: {'refreshToken': refreshToken});
       if (response.statusCode == 200) {
         //get new access token
-        accessToken = response.data["tokens"]["access"]["access"];
+        accessToken = response.data["tokens"]["access"]["token"];
         await _storage.saveString(KEY_CONST.ACCESS_TOKEN_KEY, accessToken!);
         await _storage.saveString(KEY_CONST.REFRESH_TOKEN_KEY,
-            response.data["tokens"]["refresh"]["access"]);
+            response.data["tokens"]["refresh"]["token"]);
         return true;
       } else {
         //invalid refresh token

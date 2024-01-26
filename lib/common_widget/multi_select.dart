@@ -16,6 +16,15 @@ class MultiSelect extends StatefulWidget {
 }
 
 class _MultiSelectState extends State<MultiSelect> {
+  List<String> tempSelectedItems = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    tempSelectedItems.addAll(widget.selectedItems);
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -24,7 +33,7 @@ class _MultiSelectState extends State<MultiSelect> {
         child: ListBody(
           children: widget.items
               .map((value) => CheckboxListTile(
-                  value: widget.selectedItems.contains(value),
+                  value: tempSelectedItems.contains(value),
                   title: Text(value),
                   controlAffinity: ListTileControlAffinity.leading,
                   onChanged: (isChecked) => _itemChange(value, isChecked!)))
@@ -41,9 +50,9 @@ class _MultiSelectState extends State<MultiSelect> {
   void _itemChange(String itemValue, bool isSelected) {
     setState(() {
       if (isSelected) {
-        widget.selectedItems.add(itemValue);
+        tempSelectedItems.add(itemValue);
       } else {
-        widget.selectedItems.remove(itemValue);
+        tempSelectedItems.remove(itemValue);
       }
     });
   }
@@ -53,6 +62,6 @@ class _MultiSelectState extends State<MultiSelect> {
   }
 
   void _submit() {
-    Navigator.pop(context, widget.selectedItems);
+    Navigator.pop(context, tempSelectedItems);
   }
 }
