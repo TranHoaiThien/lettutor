@@ -27,7 +27,7 @@ class RegisterPage extends StatelessWidget {
               Column(
                 children: [
                   Image.network(
-                    "https://app.lettutor.com/static/media/login.8d01124a.png",
+                    "https://sandbox.app.lettutor.com/static/media/login.8d01124a.png",
                     height: screenSize.height / 2.75,
                     fit: BoxFit.fitHeight,
                   ),

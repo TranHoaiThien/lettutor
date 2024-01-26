@@ -38,7 +38,7 @@ class _DiscoverySearchRowState extends State<DiscoverySearchRow> {
               child: SvgPicture.network(
                   height: 100,
                   fit: BoxFit.fitWidth,
-                  "https://app.lettutor.com/static/media/course.0bf1bb71.svg"),
+                  "https://sandbox.app.lettutor.com/static/media/course.0bf1bb71.svg"),
             ),
             const SizedBox(
               width: StyleConst.kDefaultPadding,
