@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
-import 'package:lettutor/pages/course_page/widgets/ListCourseWidget.dart';
+import 'package:lettutor/pages/course_page/widgets/list_course_widget.dart';
 import 'package:lettutor/pages/course_page/widgets/discovery_search_row.dart';
 import 'package:lettutor/pages/course_page/widgets/filters_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,10 +19,10 @@ class CoursePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Discovery courses and search
-            DiscoverySeachRow(),
+            const DiscoverySeachRow(),
 
             //Description
-            SizedBox(
+            const SizedBox(
               height: StyleConst.kDefaultPadding,
             ),
 
@@ -32,7 +32,7 @@ class CoursePage extends StatelessWidget {
                   textStyle: FontConst.regular.copyWith(fontSize: 14)),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: StyleConst.kDefaultPadding,
             ),
 

@@ -5,9 +5,15 @@ import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:lettutor/utils/email_validation.dart';
 
 class LoginFormField extends StatefulWidget {
-  const LoginFormField({Key? key}) : super(key: key);
+  const LoginFormField(
+      {Key? key,
+      required this.emailController,
+      required this.passwordController})
+      : super(key: key);
+  final TextEditingController emailController, passwordController;
 
   @override
   State<LoginFormField> createState() => _LoginFormFieldState();
@@ -33,6 +39,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
         TextFormField(
           autovalidateMode: AutovalidateMode.always,
           validator: validateEmail,
+          controller: widget.emailController,
           style: const TextStyle(fontSize: 14),
           decoration: InputDecoration(
             isDense: true,
@@ -55,6 +62,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
           height: StyleConst.kDefaultPadding / 3,
         ),
         TextFormField(
+          controller: widget.passwordController,
           autovalidateMode: AutovalidateMode.always,
           validator: validatePassword,
           obscureText: _obsecureText,
@@ -83,8 +91,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return AppLocalizations.of(context)!.inputMail;
-    }
-    if (value.length < 1) {
+    } else if (!value.isValidEmail) {
       return AppLocalizations.of(context)!.validEmail;
     } else {
       return null;
@@ -94,8 +101,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
   String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return AppLocalizations.of(context)!.inputPassword;
-    }
-    if (value.length < 1) {
+    } else if (value.length < 6) {
       return AppLocalizations.of(context)!.validPassword;
     } else {
       return null;

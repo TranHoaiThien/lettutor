@@ -5,6 +5,7 @@ import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+
 class DiscoverySeachRow extends StatelessWidget {
   const DiscoverySeachRow({Key? key}) : super(key: key);
 
@@ -18,7 +19,7 @@ class DiscoverySeachRow extends StatelessWidget {
           child: SvgPicture.network(
               height: 100,
               fit: BoxFit.fitWidth,
-              "https://sandbox.app.lettutor.com/static/media/course.0bf1bb71.svg"),
+              "https://app.lettutor.com/static/media/course.0bf1bb71.svg"),
         ),
         const SizedBox(
           width: StyleConst.kDefaultPadding,
@@ -37,19 +38,16 @@ class DiscoverySeachRow extends StatelessWidget {
               //search
               Row(
                 children: [
-                  Expanded(
+                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
                         isDense: true,
-                        contentPadding:
-                            const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                         border: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey),
                         ),
-                        hintText:
-                            AppLocalizations.of(context)!.course.toLowerCase(),
-                        hintStyle:
-                            const TextStyle(color: Colors.grey, fontSize: 14),
+                        hintText: AppLocalizations.of(context)!.course.toLowerCase(),
+                        hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                       style: const TextStyle(fontSize: 14),
                     ),

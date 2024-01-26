@@ -28,7 +28,10 @@ class SectionWithChipWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: StyleConst.kDefaultPadding),
           child: Wrap(
             children: List<Widget>.generate(listChip.length, (index) {
-              return ItemChip(content: listChip[index]);
+              return Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: ItemChip(content: listChip[index]),
+              );
             }),
           ),
         )

@@ -5,12 +5,7 @@ import 'package:lettutor/constants/style_const.dart';
 import 'package:lettutor/common_widget/section_widget.dart';
 
 class AttributeSection extends StatelessWidget {
-  const AttributeSection(
-      {Key? key,
-      required this.sectionTitle,
-      required this.attribute,
-      required this.icon})
-      : super(key: key);
+  const AttributeSection({Key? key, required this.sectionTitle, required this.attribute, required this.icon}) : super(key: key);
 
   final String sectionTitle, attribute;
   final IconData icon;
@@ -19,10 +14,7 @@ class AttributeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionWidget(
-          sectionTitle: sectionTitle,
-          fontSize: 22,
-        ),
+        SectionWidget(sectionTitle: sectionTitle, fontSize: 22,),
         const SizedBox(
           height: StyleConst.kDefaultPadding,
         ),

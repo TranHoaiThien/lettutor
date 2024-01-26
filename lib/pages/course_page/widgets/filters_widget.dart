@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lettutor/common_widget/drop_select_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:lettutor/data/level_options.dart';
 
 class FiltersWidget extends StatelessWidget {
   FiltersWidget({Key? key}) : super(key: key);
-
-  final List<String> levelOption = [
-    "Any level",
-    "Beginer",
-    "Upper-Beginer",
-    "Pre-Intermediate",
-    "Intermediate",
-    "Upper-Intermediate",
-    "Pre-Advanced",
-    "Advanced",
-    "Very Advanced",
-  ];
 
   final List<String> selectedLevel = [];
 
