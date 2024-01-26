@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,8 +28,7 @@ class AvatarNameRow extends StatelessWidget {
             Text(
               tutor.name,
               style: GoogleFonts.poppins(
-                  textStyle:
-                  FontConst.semiBold.copyWith(fontSize: 22)),
+                  textStyle: FontConst.semiBold.copyWith(fontSize: 22)),
             ),
             RatingBarIndicator(
               rating: tutor.rated_star,
@@ -50,8 +47,7 @@ class AvatarNameRow extends StatelessWidget {
               tutor.country,
               style: GoogleFonts.roboto(
                   textStyle: FontConst.regular.copyWith(
-                      fontSize: 16,
-                      color: Colors.black.withOpacity(0.85))),
+                      fontSize: 16, color: Colors.black.withOpacity(0.85))),
             )
           ],
         )

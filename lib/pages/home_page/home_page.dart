@@ -18,7 +18,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     ListTutorProvider listTutorProvider =
         Provider.of<ListTutorProvider>(context, listen: false);
 

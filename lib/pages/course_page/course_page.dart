@@ -11,7 +11,6 @@ class CoursePage extends StatelessWidget {
   const CoursePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
       child: Container(
         padding: const EdgeInsets.all(StyleConst.kDefaultPadding),
@@ -23,7 +22,9 @@ class CoursePage extends StatelessWidget {
             DiscoverySeachRow(),
 
             //Description
-            SizedBox(height: StyleConst.kDefaultPadding,),
+            SizedBox(
+              height: StyleConst.kDefaultPadding,
+            ),
 
             Text(
               AppLocalizations.of(context)!.liveTutorHasBuilt,
@@ -31,14 +32,15 @@ class CoursePage extends StatelessWidget {
                   textStyle: FontConst.regular.copyWith(fontSize: 14)),
             ),
 
-            SizedBox(height: StyleConst.kDefaultPadding,),
+            SizedBox(
+              height: StyleConst.kDefaultPadding,
+            ),
 
             FiltersWidget(),
 
             //List course
 
             const ListCourseWidget(),
-
           ],
         ),
       ),

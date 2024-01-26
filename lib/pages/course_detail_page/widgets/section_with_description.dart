@@ -1,12 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 
 class SectionWithDescriptionWidget extends StatelessWidget {
-  const SectionWithDescriptionWidget({Key? key, required this.sectionTitle, required this.description}) : super(key: key);
+  const SectionWithDescriptionWidget(
+      {Key? key, required this.sectionTitle, required this.description})
+      : super(key: key);
 
   final String sectionTitle, description;
 
@@ -29,8 +29,7 @@ class SectionWithDescriptionWidget extends StatelessWidget {
           ],
         ),
         Padding(
-          padding:
-          const EdgeInsets.only(left: StyleConst.kDefaultPadding),
+          padding: const EdgeInsets.only(left: StyleConst.kDefaultPadding),
           child: Text(
             description,
             style: GoogleFonts.openSans(

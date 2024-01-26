@@ -33,7 +33,10 @@ class CourseDetailPage extends StatelessWidget {
               const SizedBox(
                 height: StyleConst.kDefaultPadding,
               ),
-              SectionWidget(sectionTitle: AppLocalizations.of(context)!.overview, fontSize: 22,),
+              SectionWidget(
+                sectionTitle: AppLocalizations.of(context)!.overview,
+                fontSize: 22,
+              ),
               const SizedBox(
                 height: StyleConst.kDefaultPadding,
               ),
@@ -58,17 +61,20 @@ class CourseDetailPage extends StatelessWidget {
               ),
               AttributeSection(
                   sectionTitle: AppLocalizations.of(context)!.courseLength,
-                  attribute: "${course.numLessons} ${AppLocalizations.of(context)!.topics}",
+                  attribute:
+                      "${course.numLessons} ${AppLocalizations.of(context)!.topics}",
                   icon: Icons.book_outlined),
               const SizedBox(
                 height: StyleConst.kDefaultPadding,
               ),
-              SectionWidget(sectionTitle: AppLocalizations.of(context)!.listTopic, fontSize: 22,),
-
+              SectionWidget(
+                sectionTitle: AppLocalizations.of(context)!.listTopic,
+                fontSize: 22,
+              ),
               ...List.generate(
                   course.listTopic.length,
-                  (index) => TopicTile(
-                      topic: course.listTopic[index], index: index))
+                  (index) =>
+                      TopicTile(topic: course.listTopic[index], index: index))
             ],
           ),
         ),

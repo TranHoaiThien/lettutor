@@ -21,10 +21,9 @@ class SectionWithChipWidget extends StatelessWidget {
           style: GoogleFonts.poppins(
               textStyle: FontConst.medium.copyWith(fontSize: 17)),
         ),
-
-        const SizedBox(height: StyleConst.kDefaultPadding / 3,),
-
-
+        const SizedBox(
+          height: StyleConst.kDefaultPadding / 3,
+        ),
         Padding(
           padding: const EdgeInsets.only(left: StyleConst.kDefaultPadding),
           child: Wrap(

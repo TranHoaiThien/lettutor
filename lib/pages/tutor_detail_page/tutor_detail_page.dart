@@ -77,7 +77,9 @@ class TutorDetailPage extends StatelessWidget {
 
                 //Language
 
-                SectionWithChipWidget(title: AppLocalizations.of(context)!.languages, listChip: tutor.languages),
+                SectionWithChipWidget(
+                    title: AppLocalizations.of(context)!.languages,
+                    listChip: tutor.languages),
 
                 const SizedBox(
                   height: StyleConst.kDefaultPadding,
@@ -85,28 +87,33 @@ class TutorDetailPage extends StatelessWidget {
 
                 //Specialities
 
-                SectionWithChipWidget(title: AppLocalizations.of(context)!.specialities, listChip: tutor.specialites),
+                SectionWithChipWidget(
+                    title: AppLocalizations.of(context)!.specialities,
+                    listChip: tutor.specialites),
 
                 const SizedBox(
                   height: StyleConst.kDefaultPadding,
                 ),
 
                 //Interests
-                SectionWithTextWidget(title: AppLocalizations.of(context)!.interest, description: tutor.interests),
+                SectionWithTextWidget(
+                    title: AppLocalizations.of(context)!.interest,
+                    description: tutor.interests),
 
                 const SizedBox(
                   height: StyleConst.kDefaultPadding,
                 ),
-                
+
                 //Teaching experience
-                SectionWithTextWidget(title: AppLocalizations.of(context)!.teachingExperience, description: tutor.teaching_experience),
+                SectionWithTextWidget(
+                    title: AppLocalizations.of(context)!.teachingExperience,
+                    description: tutor.teaching_experience),
 
                 const SizedBox(
                   height: StyleConst.kDefaultPadding,
                 ),
 
                 TimeTableWidget(),
-
               ],
             ),
           ),

@@ -1,5 +1,3 @@
-
-
 class Topic {
   final String title;
   final String pdfUrl;

@@ -1,5 +1,3 @@
-
-
 import 'package:lettutor/models/course.dart';
 
 class SectionCourse {

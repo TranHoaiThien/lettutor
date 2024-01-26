@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lettutor/constants/colors_const.dart';
@@ -7,7 +5,12 @@ import 'package:lettutor/constants/font_const.dart';
 import 'package:lettutor/constants/style_const.dart';
 
 class TiltleDesImageWidget extends StatelessWidget {
-  const TiltleDesImageWidget({Key? key, required this.imageUrl, required this.title, required this.description}) : super(key: key);
+  const TiltleDesImageWidget(
+      {Key? key,
+      required this.imageUrl,
+      required this.title,
+      required this.description})
+      : super(key: key);
 
   final String imageUrl, title, description;
 
@@ -15,8 +18,7 @@ class TiltleDesImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius:
-          BorderRadius.circular(StyleConst.defaultRadius),
+          borderRadius: BorderRadius.circular(StyleConst.defaultRadius),
           color: Colors.white,
           boxShadow: const [
             BoxShadow(
@@ -44,8 +46,7 @@ class TiltleDesImageWidget extends StatelessWidget {
                 Text(
                   title,
                   style: GoogleFonts.poppins(
-                      textStyle:
-                      FontConst.semiBold.copyWith(fontSize: 16)),
+                      textStyle: FontConst.semiBold.copyWith(fontSize: 16)),
                 ),
                 Text(
                   description,

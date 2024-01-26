@@ -55,7 +55,9 @@ class _FavoriteReportReviewRowState extends State<FavoriteReportReviewRow> {
           ),
         ),
         IconTextButton(
-            title: AppLocalizations.of(context)!.report, icon: Icons.report_gmailerrorred, onPress: () {}),
+            title: AppLocalizations.of(context)!.report,
+            icon: Icons.report_gmailerrorred,
+            onPress: () {}),
         IconTextButton(
             title: AppLocalizations.of(context)!.review,
             icon: Icons.star_border_outlined,

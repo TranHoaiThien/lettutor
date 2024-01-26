@@ -31,10 +31,7 @@ class FiltersWidget extends StatelessWidget {
 
   final List<String> selectedCategory = [];
 
-  final List<String> sortOption = [
-    "Level Ascending",
-    "Level Decending"
-  ];
+  final List<String> sortOption = ["Level Ascending", "Level Decending"];
 
   final List<String> selectedSort = [];
 
@@ -48,12 +45,10 @@ class FiltersWidget extends StatelessWidget {
             optionsList: levelOption,
             selectedList: selectedLevel,
             hintTitle: AppLocalizations.of(context)!.selectLevel),
-
         DropDownSelectMenuItem(
             optionsList: categoryOption,
             selectedList: selectedCategory,
             hintTitle: AppLocalizations.of(context)!.selectCategory),
-
         DropDownSelectMenuItem(
             optionsList: sortOption,
             selectedList: selectedSort,

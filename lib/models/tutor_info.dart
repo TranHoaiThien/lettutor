@@ -21,7 +21,6 @@ class Tutor {
 
   final String teaching_experience;
 
-
   bool isFavorite;
 
 //<editor-fold desc="Data Methods">
