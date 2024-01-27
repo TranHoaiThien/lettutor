@@ -35,8 +35,6 @@ class BookingRepository extends BaseRepository {
         "sortBy": "asc",
         "dateTimeGte": DateTime.now().millisecondsSinceEpoch
       });
-      print("Dât: ");
-      print(response.data);
       Iterable l = response["data"]["rows"];
       return List<BookingHistory>.from(l.map((e) => BookingHistory.fromJson(e)))
           .toList();
@@ -56,12 +54,9 @@ class BookingRepository extends BaseRepository {
         "dateTimeLte": DateTime.now().millisecondsSinceEpoch
       });
       Iterable l = response["data"]["rows"];
-
-      print("Schedule get: " + l.length.toString());
       return List<BookingHistory>.from(l.map((e) => BookingHistory.fromJson(e)))
           .toList();
     } catch (error) {
-      print("Error in getch: " + error.toString());
       rethrow;
     }
   }

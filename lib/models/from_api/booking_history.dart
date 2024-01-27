@@ -8,10 +8,9 @@ class BookingHistory {
   String? scheduleDetailId;
   String? tutorMeetingLink;
   String? studentMeetingLink;
-  String? googleMeetLink;
   String? studentRequest;
   String? tutorReview;
-  int? scoreByTutor;
+  String? scoreByTutor;
   String? createdAt;
   String? updatedAt;
   String? recordUrl;
@@ -20,14 +19,9 @@ class BookingHistory {
   String? cancelNote;
   String? calendarId;
   bool? isDeleted;
-  bool? isTrial;
-  int? convertedLesson;
   ScheduleDetailInfo? scheduleDetailInfo;
-  String? classReview;
-  String? trialBookingReview;
+  // String? classReview;
   bool? showRecordUrl;
-  List<String>? studentMaterials;
-  List<Feedbacks>? feedbacks;
 
   BookingHistory(
       {this.createdAtTimeStamp,
@@ -37,7 +31,6 @@ class BookingHistory {
       this.scheduleDetailId,
       this.tutorMeetingLink,
       this.studentMeetingLink,
-      this.googleMeetLink,
       this.studentRequest,
       this.tutorReview,
       this.scoreByTutor,
@@ -49,14 +42,9 @@ class BookingHistory {
       this.cancelNote,
       this.calendarId,
       this.isDeleted,
-      this.isTrial,
-      this.convertedLesson,
       this.scheduleDetailInfo,
-      this.classReview,
-      this.trialBookingReview,
-      this.showRecordUrl,
-      this.studentMaterials,
-      this.feedbacks});
+      // this.classReview,
+      this.showRecordUrl});
 
   BookingHistory.fromJson(Map<String, dynamic> json) {
     createdAtTimeStamp = json['createdAtTimeStamp'];
@@ -66,7 +54,6 @@ class BookingHistory {
     scheduleDetailId = json['scheduleDetailId'];
     tutorMeetingLink = json['tutorMeetingLink'];
     studentMeetingLink = json['studentMeetingLink'];
-    googleMeetLink = json['googleMeetLink'];
     studentRequest = json['studentRequest'];
     tutorReview = json['tutorReview'];
     scoreByTutor = json['scoreByTutor'];
@@ -78,63 +65,38 @@ class BookingHistory {
     cancelNote = json['cancelNote'];
     calendarId = json['calendarId'];
     isDeleted = json['isDeleted'];
-    isTrial = json['isTrial'];
-    convertedLesson = json['convertedLesson'];
     scheduleDetailInfo = json['scheduleDetailInfo'] != null
-        ? new ScheduleDetailInfo.fromJson(json['scheduleDetailInfo'])
+        ? ScheduleDetailInfo.fromJson(json['scheduleDetailInfo'])
         : null;
-    classReview = json['classReview'];
-    trialBookingReview = json['trialBookingReview'];
+    // classReview = json['classReview'];
     showRecordUrl = json['showRecordUrl'];
-    if (json['studentMaterials'] != null) {
-      studentMaterials = <String>[];
-      json['studentMaterials'].forEach((v) {
-        studentMaterials!.add(v);
-      });
-    }
-    if (json['feedbacks'] != null) {
-      feedbacks = <Feedbacks>[];
-      json['feedbacks'].forEach((v) {
-        feedbacks!.add(new Feedbacks.fromJson(v));
-      });
-    }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['createdAtTimeStamp'] = this.createdAtTimeStamp;
-    data['updatedAtTimeStamp'] = this.updatedAtTimeStamp;
-    data['id'] = this.id;
-    data['userId'] = this.userId;
-    data['scheduleDetailId'] = this.scheduleDetailId;
-    data['tutorMeetingLink'] = this.tutorMeetingLink;
-    data['studentMeetingLink'] = this.studentMeetingLink;
-    data['googleMeetLink'] = this.googleMeetLink;
-    data['studentRequest'] = this.studentRequest;
-    data['tutorReview'] = this.tutorReview;
-    data['scoreByTutor'] = this.scoreByTutor;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    data['recordUrl'] = this.recordUrl;
-    data['cancelReasonId'] = this.cancelReasonId;
-    data['lessonPlanId'] = this.lessonPlanId;
-    data['cancelNote'] = this.cancelNote;
-    data['calendarId'] = this.calendarId;
-    data['isDeleted'] = this.isDeleted;
-    data['isTrial'] = this.isTrial;
-    data['convertedLesson'] = this.convertedLesson;
-    if (this.scheduleDetailInfo != null) {
-      data['scheduleDetailInfo'] = this.scheduleDetailInfo!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['createdAtTimeStamp'] = createdAtTimeStamp;
+    data['updatedAtTimeStamp'] = updatedAtTimeStamp;
+    data['id'] = id;
+    data['userId'] = userId;
+    data['scheduleDetailId'] = scheduleDetailId;
+    data['tutorMeetingLink'] = tutorMeetingLink;
+    data['studentMeetingLink'] = studentMeetingLink;
+    data['studentRequest'] = studentRequest;
+    data['tutorReview'] = tutorReview;
+    data['scoreByTutor'] = scoreByTutor;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['recordUrl'] = recordUrl;
+    data['cancelReasonId'] = cancelReasonId;
+    data['lessonPlanId'] = lessonPlanId;
+    data['cancelNote'] = cancelNote;
+    data['calendarId'] = calendarId;
+    data['isDeleted'] = isDeleted;
+    if (scheduleDetailInfo != null) {
+      data['scheduleDetailInfo'] = scheduleDetailInfo!.toJson();
     }
-    data['classReview'] = this.classReview;
-    data['trialBookingReview'] = this.trialBookingReview;
-    data['showRecordUrl'] = this.showRecordUrl;
-    if (this.studentMaterials != null) {
-      data['studentMaterials'] = this.studentMaterials!.map((v) => v).toList();
-    }
-    if (this.feedbacks != null) {
-      data['feedbacks'] = this.feedbacks!.map((v) => v.toJson()).toList();
-    }
+    // data['classReview'] = classReview;
+    data['showRecordUrl'] = showRecordUrl;
     return data;
   }
 }
@@ -166,27 +128,27 @@ class ScheduleDetailInfo {
     endPeriodTimestamp = json['endPeriodTimestamp'];
     id = json['id'];
     scheduleId = json['scheduleId'];
-    startPeriod = json['startPeriod'];
-    endPeriod = json['endPeriod'];
+    startPeriod = json['startPeriod'].toString(); //not to string
+    endPeriod = json['endPeriod'].toString();
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     scheduleInfo = json['scheduleInfo'] != null
-        ? new ScheduleInfo.fromJson(json['scheduleInfo'])
+        ? ScheduleInfo.fromJson(json['scheduleInfo'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['startPeriodTimestamp'] = this.startPeriodTimestamp;
-    data['endPeriodTimestamp'] = this.endPeriodTimestamp;
-    data['id'] = this.id;
-    data['scheduleId'] = this.scheduleId;
-    data['startPeriod'] = this.startPeriod;
-    data['endPeriod'] = this.endPeriod;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    if (this.scheduleInfo != null) {
-      data['scheduleInfo'] = this.scheduleInfo!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['startPeriodTimestamp'] = startPeriodTimestamp;
+    data['endPeriodTimestamp'] = endPeriodTimestamp;
+    data['id'] = id;
+    data['scheduleId'] = scheduleId;
+    data['startPeriod'] = startPeriod;
+    data['endPeriod'] = endPeriod;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    if (scheduleInfo != null) {
+      data['scheduleInfo'] = scheduleInfo!.toJson();
     }
     return data;
   }
@@ -230,70 +192,25 @@ class ScheduleInfo {
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     tutorInfo = json['tutorInfo'] != null
-        ? new TutorInfoPagination.fromJson(json['tutorInfo'])
+        ? TutorInfoPagination.fromJson(json['tutorInfo'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['date'] = this.date;
-    data['startTimestamp'] = this.startTimestamp;
-    data['endTimestamp'] = this.endTimestamp;
-    data['id'] = this.id;
-    data['tutorId'] = this.tutorId;
-    data['startTime'] = this.startTime;
-    data['endTime'] = this.endTime;
-    data['isDeleted'] = this.isDeleted;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    if (this.tutorInfo != null) {
-      data['tutorInfo'] = this.tutorInfo!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['date'] = date;
+    data['startTimestamp'] = startTimestamp;
+    data['endTimestamp'] = endTimestamp;
+    data['id'] = id;
+    data['tutorId'] = tutorId;
+    data['startTime'] = startTime;
+    data['endTime'] = endTime;
+    data['isDeleted'] = isDeleted;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    if (tutorInfo != null) {
+      data['tutorInfo'] = tutorInfo!.toJson();
     }
-    return data;
-  }
-}
-
-class Feedbacks {
-  String? id;
-  String? bookingId;
-  String? firstId;
-  String? secondId;
-  int? rating;
-  String? content;
-  String? createdAt;
-  String? updatedAt;
-
-  Feedbacks(
-      {this.id,
-      this.bookingId,
-      this.firstId,
-      this.secondId,
-      this.rating,
-      this.content,
-      this.createdAt,
-      this.updatedAt});
-
-  Feedbacks.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    bookingId = json['bookingId'];
-    firstId = json['firstId'];
-    secondId = json['secondId'];
-    rating = json['rating'];
-    content = json['content'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['bookingId'] = this.bookingId;
-    data['firstId'] = this.firstId;
-    data['secondId'] = this.secondId;
-    data['rating'] = this.rating;
-    data['content'] = this.content;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
     return data;
   }
 }
