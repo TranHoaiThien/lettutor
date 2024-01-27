@@ -65,6 +65,7 @@ class _SelectNationalityWidgetState extends State<SelectNationalityWidget> {
                         style: const TextStyle(color: Colors.grey),
                       ),
                       Wrap(
+                        spacing: 4,
                         children: selectedNationality
                             .map((e) => Chip(
                                   label: Text(e,
@@ -112,10 +113,13 @@ class _SelectNationalityWidgetState extends State<SelectNationalityWidget> {
         });
     if (tempSelected != null) {
       selectedNationality = tempSelected;
+      isForcus = false;
       checkNationality();
+    } else {
+      setState(() {
+        isForcus = false;
+      });
     }
-
-    isForcus = false;
   }
 
   void checkNationality() {

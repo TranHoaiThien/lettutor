@@ -23,8 +23,14 @@ class _BuildListScheduleHistoryState extends State<BuildListScheduleHistory> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BookingHistoryBloc, BookingHistoryState>(
+    return BlocConsumer<BookingHistoryBloc, BookingHistoryState>(
       bloc: bookingHistoryBloc,
+      listener: (context, state) {
+        if (state is CancelBookingHistoryError) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(state.message)));
+        }
+      },
       builder: (context, state) {
         if (state is BookingHistoryLoading) {
           return const Center(child: CircularProgressIndicator());
