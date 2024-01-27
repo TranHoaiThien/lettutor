@@ -19,7 +19,7 @@ class CoursePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Discovery courses and search
-            const DiscoverySearchRow(),
+            const DiscoverySeachRow(),
 
             //Description
             const SizedBox(
