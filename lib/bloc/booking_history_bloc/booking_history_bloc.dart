@@ -44,6 +44,7 @@ class BookingHistoryBloc
       emit(BookingHistoryLoading());
       try {
         final response = await repository.getBookedClass(1, event.perPage);
+
         listBookingHistory.clear();
         listBookingHistory.addAll(response);
         emit(BookingHistorySuccess(listBookingHistory));
@@ -62,6 +63,7 @@ class BookingHistoryBloc
           }
 
           final response = await repository.getHistoryClasses(page);
+          print(response);
           page++;
 
           if (response.isEmpty) {
@@ -71,6 +73,7 @@ class BookingHistoryBloc
             emit(BookingHistorySuccess(listBookingHistory));
           }
         } catch (error) {
+          print("Error +++: $error");
           emit(BookingHistoryError(error.toString()));
         }
       }
